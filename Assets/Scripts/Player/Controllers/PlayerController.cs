@@ -3,34 +3,37 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float m_acceleration = 3.0f;
+    private float flightPower = 3.0f;
 
     [SerializeField]
-    private Rigidbody2D m_rigidbody;
+    private Rigidbody2D playerRigidbody;
 
-    private IPlayerControls m_controls;
+
+    private void Start()
+    {
+        playerRigidbody = GetComponent<Rigidbody2D>();
+    }
 
     private void Awake()
     {
 #if UNITY_ANDROID && !UNITY_EDITOR
         Application.targetFrameRate = 60;
 #endif
-        m_controls = GetComponent<IPlayerControls>();
-        if (m_controls == null)
-        {
-            gameObject.AddComponent<ProtoControls>();
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
     }
 
+    // flying
     private void FixedUpdate()
     {
-        if (m_controls.IsFlying)
+        bool isFlying = Input.GetMouseButton(0);
+        
+        if (isFlying)
         {
-            m_rigidbody.AddForce(new Vector2(0, m_acceleration));
+            playerRigidbody.AddForce(new Vector2(0, flightPower));
         }
     }
 }
