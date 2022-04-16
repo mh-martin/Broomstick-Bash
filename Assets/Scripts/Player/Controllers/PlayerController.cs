@@ -6,6 +6,9 @@ public class PlayerController : MonoBehaviour
     private float flightPower = 3.0f;
 
     [SerializeField]
+    private float forwardMovementSpeed = 3.0f;
+
+    [SerializeField]
     private Rigidbody2D playerRigidbody;
 
 
@@ -35,5 +38,9 @@ public class PlayerController : MonoBehaviour
         {
             playerRigidbody.AddForce(new Vector2(0, flightPower));
         }
+
+        Vector2 newVelocity = playerRigidbody.velocity;
+        newVelocity.x = forwardMovementSpeed;
+        playerRigidbody.velocity = newVelocity;
     }
 }
