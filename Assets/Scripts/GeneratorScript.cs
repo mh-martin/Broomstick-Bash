@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// room generation tutorial https://www.raywenderlich.com/5459-how-to-make-a-game-like-jetpack-joyride-in-unity-2d-part-2#toc-anchor-009 
+
 public class GeneratorScript : MonoBehaviour
 {
     public GameObject[] availableRooms;
