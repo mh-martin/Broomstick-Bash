@@ -10,6 +10,17 @@ public class GeneratorScript : MonoBehaviour
     public List<GameObject> currentRooms;
     private float screenWidthInPoints;
 
+    public GameObject[] availableObjects;
+    public List<GameObject> objects;
+
+    public float objectsMinDistance = 5.0f;
+    public float objectsMaxDistance = 10.0f;
+
+    public float objectsMinY = -1.4f;
+    public float objectsMaxY = 1.4f;
+
+    public float objectsMinRotation = -45.0f;
+    public float objectsMaxRotation = 45.0f;
     
     void Start()
     {
@@ -83,12 +94,65 @@ public class GeneratorScript : MonoBehaviour
         }
     }
 
+    void AddObject(float lastObjectX)
+    {
+        // generates random index to select a random object from array
+        int randomIndex = Random.Range(0, availableObjects.Length);
+        // creates instance of the randomly selected object
+        GameObject obj = (GameObject)Instantiate(availableObjects[randomIndex]);
+        // sets the position
+        float objectPositionX = lastObjectX + Random.Range(objectsMinDistance, objectsMaxDistance);
+        float randomY = Random.Range(objectsMinY, objectsMaxY);
+        obj.transform.position = new Vector3(objectPositionX, randomY, 0);
+        // adds random rotation
+        float rotation = Random.Range(objectsMinRotation, objectsMaxRotation);
+        obj.transform.rotation = Quaternion.Euler(Vector3.forward * rotation);
+        // adds the created object to list for tracking and removal
+        objects.Add(obj);
+    }
+
+    void GenerateObjectsIfRequired()
+    {
+        // calculates key points ahead and behind the player
+        float playerX = transform.position.x;
+        float removeObjectsX = playerX - screenWidthInPoints;
+        float addObjectX = playerX + screenWidthInPoints;
+        float farthestObjectX = 0;
+        // places objects that need to be removed to a list
+        List<GameObject> objectsToRemove = new List<GameObject>();
+        foreach (var obj in objects)
+        {
+            //position of the object
+            float objX = obj.transform.position.x;
+            //maximum objX value
+            farthestObjectX = Mathf.Max(farthestObjectX, objX);
+            //object that is behind is marked for removal
+            if (objX < removeObjectsX)
+            {
+                objectsToRemove.Add(obj);
+            }
+        }
+        //removes objects
+        foreach (var obj in objectsToRemove)
+        {
+            objects.Remove(obj);
+            Destroy(obj);
+        }
+        //if player is about to see the last object and there are no more objects ahead, calls a method to add a new one
+        if (farthestObjectX < addObjectX)
+        {
+            AddObject(farthestObjectX);
+        }
+    }
+
+
     // periodically executes room generation script
     private IEnumerator GeneratorCheck()
     {
         while (true)
         {
             GenerateRoomIfRequired();
+            GenerateObjectsIfRequired();
             yield return new WaitForSeconds(0.25f);
         }
     }

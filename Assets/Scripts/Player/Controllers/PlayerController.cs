@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody2D playerRigidbody;
 
+    private uint magicEnergy = 0;
 
     private void Start()
     {
@@ -29,6 +30,14 @@ public class PlayerController : MonoBehaviour
     {
     }
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.CompareTag("Energy"))
+        {
+            CollectEnergy(collider);
+        }
+    }
+
     // flying
     private void FixedUpdate()
     {
@@ -42,5 +51,11 @@ public class PlayerController : MonoBehaviour
         Vector2 newVelocity = playerRigidbody.velocity;
         newVelocity.x = forwardMovementSpeed;
         playerRigidbody.velocity = newVelocity;
+    }
+
+    void CollectEnergy(Collider2D energyCollider)
+    {
+        magicEnergy++;
+        Destroy(energyCollider.gameObject);
     }
 }
