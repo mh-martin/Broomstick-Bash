@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
 
     private uint magicEnergy = 0;
+
+    public Text energyCollectedLabel;
 
     private void Start()
     {
@@ -56,6 +59,8 @@ public class PlayerController : MonoBehaviour
     void CollectEnergy(Collider2D energyCollider)
     {
         magicEnergy++;
+        energyCollectedLabel.text = magicEnergy.ToString();
         Destroy(energyCollider.gameObject);
+
     }
 }
