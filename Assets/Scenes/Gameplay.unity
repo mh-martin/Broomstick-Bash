@@ -572,6 +572,7 @@ MonoBehaviour:
   availableObjects:
   - {fileID: 2008604518087857603, guid: 3568e68270e23064984bf9a4ad0ff103, type: 3}
   - {fileID: 4815668065334517577, guid: d559173d8d29ddd4a83500482099b7c5, type: 3}
+  - {fileID: 5198526769359718722, guid: b19d3723a146be44f9157cc975bf78cd, type: 3}
   objects: []
   objectsMinDistance: 5
   objectsMaxDistance: 10

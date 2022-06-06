@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private uint magicEnergy = 0;
 
     public Text energyCollectedLabel;
+
+    private bool isDead = false;
 
     private void Start()
     {
@@ -39,6 +42,11 @@ public class PlayerController : MonoBehaviour
         {
             CollectEnergy(collider);
         }
+        else
+        {
+            isDead = true;
+            Restart();
+        }
     }
 
     // flying
@@ -62,5 +70,10 @@ public class PlayerController : MonoBehaviour
         energyCollectedLabel.text = magicEnergy.ToString();
         Destroy(energyCollider.gameObject);
 
+    }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
