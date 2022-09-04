@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Rigidbody2D playerRigidbody;
 
+    public GameObject gameOverCanvas;
+
     private uint magicEnergy = 0;
 
     public Text energyCollectedLabel;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        Time.timeScale = 1;
     }
 
     private void Awake()
@@ -45,7 +48,8 @@ public class PlayerController : MonoBehaviour
         else
         {
             isDead = true;
-            Restart();
+            PauseGame();
+            gameOverCanvas.SetActive(true);
         }
     }
 
@@ -75,5 +79,10 @@ public class PlayerController : MonoBehaviour
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void PauseGame()
+    {
+        Time.timeScale = 0;
     }
 }
