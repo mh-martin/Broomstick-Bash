@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: f69c48c33f113db408d6207ad5819645
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -400628626351713609
+    second: Spritesheet_linnut_0
+  - first:
+      213: -8198132685549956914
+    second: Spritesheet_linnut_1
+  - first:
+      213: 1462747352434628459
+    second: Spritesheet_linnut_2
+  - first:
+      213: -4038179574364216228
+    second: Spritesheet_linnut_3
+  - first:
+      213: 6876442494468524667
+    second: Spritesheet_linnut_4
+  - first:
+      213: 3312873767242824014
+    second: Spritesheet_linnut_5
+  - first:
+      213: 5576007524926428648
+    second: Spritesheet_linnut_6
+  - first:
+      213: 8850553043738042520
+    second: Spritesheet_linnut_7
+  - first:
+      213: -5620092512601332603
+    second: Spritesheet_linnut_8
+  - first:
+      213: -1119120498042533954
+    second: Spritesheet_linnut_9
+  - first:
+      213: 2879831711770010940
+    second: Spritesheet_linnut_10
+  - first:
+      213: -8838763075301753823
+    second: Spritesheet_linnut_11
+  - first:
+      213: 6070023929999084304
+    second: Spritesheet_linnut_12
+  - first:
+      213: 1036685224219150979
+    second: Spritesheet_linnut_13
+  - first:
+      213: 8122491219320047519
+    second: Spritesheet_linnut_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +86,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +120,360 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Spritesheet_linnut_0
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1790
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2147f036ea07af0800000000000000
+      internalID: -400628626351713609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_1
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1792
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0964012c16a3e80800000000000000
+      internalID: -8198132685549956914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_2
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 1792
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67520297f8bc4410800000000000000
+      internalID: 1462747352434628459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_3
+      rect:
+        serializedVersion: 2
+        x: 3753
+        y: 1792
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5468c2821185f7c0800000000000000
+      internalID: -4038179574364216228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 998
+        width: 748
+        height: 785
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7a823904080e6f50800000000000000
+      internalID: 6876442494468524667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_5
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 998
+        width: 748
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49f7329321b9fd20800000000000000
+      internalID: 3312873767242824014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_6
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 719
+        width: 748
+        height: 713
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5152c0d45f16d40800000000000000
+      internalID: 5576007524926428648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_7
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 955
+        width: 748
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89022cdd91b73da70800000000000000
+      internalID: 8850553043738042520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 661
+        height: 485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584a095e2ab6102b0800000000000000
+      internalID: -5620092512601332603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_9
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 596
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb7015d16d51870f0800000000000000
+      internalID: -1119120498042533954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_10
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 611
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35e4f01fa737f720800000000000000
+      internalID: 2879831711770010940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_11
+      rect:
+        serializedVersion: 2
+        x: 2469
+        y: 596
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cbcc210d7665580800000000000000
+      internalID: -8838763075301753823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_12
+      rect:
+        serializedVersion: 2
+        x: 796
+        y: 160
+        width: 660
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01b47bd9a9e0d3450800000000000000
+      internalID: 6070023929999084304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_13
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 22
+        width: 659
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a8a7508bb036e00800000000000000
+      internalID: 1036685224219150979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_linnut_14
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 160
+        width: 659
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f970dcaaab2e8b070800000000000000
+      internalID: 8122491219320047519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

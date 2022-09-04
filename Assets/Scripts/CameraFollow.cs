@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float targetObjectX = targetObject.transform.position.x;
         Vector3 newCameraPosition = transform.position;

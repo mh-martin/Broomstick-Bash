@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 8b0d91aa860ce1249b963329467cff55
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7137552289380928161
+    second: Spritesheet_pahaaenergia_0
+  - first:
+      213: 1519451727970511891
+    second: Spritesheet_pahaaenergia_1
+  - first:
+      213: 1267907515941030630
+    second: Spritesheet_pahaaenergia_2
+  - first:
+      213: 7028571377947926146
+    second: Spritesheet_pahaaenergia_3
+  - first:
+      213: -5496440768678555032
+    second: Spritesheet_pahaaenergia_4
+  - first:
+      213: 5825855669089205340
+    second: Spritesheet_pahaaenergia_5
+  - first:
+      213: -3200893544764345519
+    second: Spritesheet_pahaaenergia_6
+  - first:
+      213: -7923918086278117850
+    second: Spritesheet_pahaaenergia_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +65,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +99,108 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Spritesheet_pahaaenergia_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 66
+        width: 700
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aa8356adfdad0360800000000000000
+      internalID: 7137552289380928161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_pahaaenergia_1
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 66
+        width: 700
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c2903db4d261510800000000000000
+      internalID: 1519451727970511891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_pahaaenergia_2
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 66
+        width: 700
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea86b70b23889110800000000000000
+      internalID: 1267907515941030630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
