@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Energy
   - Enemy
+  - Forest
+  - Countryside
   layers:
   - Default
   - TransparentFX

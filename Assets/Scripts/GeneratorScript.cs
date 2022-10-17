@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 // room generation tutorial https://www.raywenderlich.com/5459-how-to-make-a-game-like-jetpack-joyride-in-unity-2d-part-2#toc-anchor-009 
@@ -21,6 +22,10 @@ public class GeneratorScript : MonoBehaviour
 
     public float objectsMinRotation = -45.0f;
     public float objectsMaxRotation = 45.0f;
+
+    private string lastSpawnedTag = "";
+    private int sameTagSpawnCount = 0;
+    public int maxSameSpawned = 3;
     
     void Start()
     {
@@ -34,10 +39,12 @@ public class GeneratorScript : MonoBehaviour
 
     void AddRoom(float farthestRoomEndX)
     {
+        GameObject lastRoom = currentRooms[currentRooms.Count - 1];
+        GameObject[] filteredRooms = availableRooms.Where(room => !lastRoom.CompareTag(room.tag)).ToArray();
         //picks random index of the room prefab
-        int randomRoomIndex = Random.Range(0, availableRooms.Length);
+        int randomRoomIndex = Random.Range(0, filteredRooms.Length);
         //creates a room object using the index chosen
-        GameObject room = (GameObject)Instantiate(availableRooms[randomRoomIndex]);
+        GameObject room = Instantiate(filteredRooms[randomRoomIndex]);
         //get the size of the floor which = width
         float roomWidth = room.transform.Find("floor").localScale.x;
         //calculates where center should be
@@ -56,12 +63,12 @@ public class GeneratorScript : MonoBehaviour
         bool addRooms = true;
         //saves player position
         float playerX = transform.position.x;
-        //point after which room should be removed
-        float removeRoomX = playerX - screenWidthInPoints;
         //if no room exists after this point then room needs to be added
         float addRoomX = playerX + screenWidthInPoints;
         //stores the point where level currently ends
         float farthestRoomEndX = 0;
+        //point after which room should be removed
+        float removeRoomX = playerX - screenWidthInPoints;
         foreach (var room in currentRooms)
         {
             //enumerates currentRooms
@@ -96,10 +103,25 @@ public class GeneratorScript : MonoBehaviour
 
     void AddObject(float lastObjectX)
     {
+        List<GameObject> filteredObjects = new List<GameObject>(availableObjects);
+        // Compares the amount of object types spawned so far to the maximum of same type allowed
+        if (sameTagSpawnCount == maxSameSpawned)
+        {
+            filteredObjects = filteredObjects.Where(go => !go.CompareTag(lastSpawnedTag)).ToList();
+        }
+
         // generates random index to select a random object from array
-        int randomIndex = Random.Range(0, availableObjects.Length);
+        int randomIndex = Random.Range(0, filteredObjects.Count);
+        // If the next object is an enemy, compares it to the previous object and rerolls if they're the same
+        GameObject prefabObject = filteredObjects[randomIndex];
+        if (objects.Count > 0 && prefabObject.CompareTag("Enemy") && prefabObject.name == objects.Last().name)
+        {
+            filteredObjects.RemoveAt(randomIndex);
+            randomIndex = Random.Range(0, filteredObjects.Count);
+        }
         // creates instance of the randomly selected object
-        GameObject obj = (GameObject)Instantiate(availableObjects[randomIndex]);
+        GameObject obj = Instantiate(filteredObjects[randomIndex]);
+        obj.name = prefabObject.name;
         // sets the position
         float objectPositionX = lastObjectX + Random.Range(objectsMinDistance, objectsMaxDistance);
         float randomY = Random.Range(objectsMinY, objectsMaxY);
@@ -109,6 +131,12 @@ public class GeneratorScript : MonoBehaviour
         obj.transform.rotation = Quaternion.Euler(Vector3.forward * rotation);
         // adds the created object to list for tracking and removal
         objects.Add(obj);
+        if (!string.IsNullOrEmpty(lastSpawnedTag) && !obj.CompareTag(lastSpawnedTag))
+        {
+            sameTagSpawnCount = 0;
+        }
+        sameTagSpawnCount++;
+        lastSpawnedTag = obj.tag;
     }
 
     void GenerateObjectsIfRequired()
