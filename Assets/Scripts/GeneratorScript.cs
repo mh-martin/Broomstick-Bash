@@ -126,9 +126,6 @@ public class GeneratorScript : MonoBehaviour
     float objectPositionX = lastObjectX + Random.Range(objectsMinDistance, objectsMaxDistance);
     float randomY = Random.Range(objectsMinY, objectsMaxY);
     obj.transform.position = new Vector3(objectPositionX, randomY, 0);
-    // adds random rotation
-    float rotation = Random.Range(objectsMinRotation, objectsMaxRotation);
-    obj.transform.rotation = Quaternion.Euler(Vector3.forward * rotation);
     // adds the created object to list for tracking and removal
     objects.Add(obj);
     if (!string.IsNullOrEmpty(lastSpawnedTag) && !obj.CompareTag(lastSpawnedTag))
