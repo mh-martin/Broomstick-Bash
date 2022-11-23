@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,12 @@ public class PlayerController : MonoBehaviour
 
   [SerializeField]
   private float forwardMovementSpeed = 3.0f;
+
+  [SerializeField]
+  private float maxForwardSpeed = 15.0f;
+
+  [SerializeField]
+  private float speedIncrease = 0.1f;
 
   [SerializeField]
   private Rigidbody2D playerRigidbody;
@@ -25,6 +32,7 @@ public class PlayerController : MonoBehaviour
   {
     playerRigidbody = GetComponent<Rigidbody2D>();
     Time.timeScale = 1;
+    StartCoroutine(IncreaseFlyingSpeed());
   }
 
   private void Awake()
@@ -61,8 +69,9 @@ public class PlayerController : MonoBehaviour
     if (isFlying)
     {
       playerRigidbody.AddForce(new Vector2(0, flightPower));
-    }
 
+    }
+    
     Vector2 newVelocity = playerRigidbody.velocity;
     newVelocity.x = forwardMovementSpeed;
     playerRigidbody.velocity = newVelocity;
@@ -74,6 +83,19 @@ public class PlayerController : MonoBehaviour
     energyCollectedLabel.text = magicEnergy.ToString();
     Destroy(energyCollider.gameObject);
 
+  }
+
+  IEnumerator IncreaseFlyingSpeed()
+  {
+    for(;;)
+    {
+      if (forwardMovementSpeed <= maxForwardSpeed)
+      {
+        forwardMovementSpeed += speedIncrease;
+      }
+      yield return new WaitForSeconds(1.0f);
+    }
+    
   }
 
   void Restart()

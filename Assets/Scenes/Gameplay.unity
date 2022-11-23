@@ -1000,6 +1000,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flightPower: 60
   forwardMovementSpeed: 3
+  maxForwardSpeed: 15
+  speedIncrease: 0.1
   playerRigidbody: {fileID: 1870362254}
   gameOverCanvas: {fileID: 20580918}
   energyCollectedLabel: {fileID: 1157733009}
@@ -1025,6 +1027,8 @@ MonoBehaviour:
   - {fileID: 4068036259120787578, guid: 813e1d5e7c00582449e95d611cb242c7, type: 3}
   - {fileID: 6133290818367225936, guid: 3d25c33ea68137e46b96adf266174ca9, type: 3}
   - {fileID: 7648983310125029288, guid: 07f685b325c110742afd46d317142675, type: 3}
+  - {fileID: 3763297301659993897, guid: b0d9a0353c197f041b49e07a7aab86d9, type: 3}
+  - {fileID: 6914356924791500262, guid: 0496c06d7c9c2574fabcc330030466aa, type: 3}
   objects: []
   objectsMinDistance: 10
   objectsMaxDistance: 30
@@ -1032,6 +1036,7 @@ MonoBehaviour:
   objectsMaxY: 1.4
   objectsMinRotation: 0
   objectsMaxRotation: 0
+  maxSameSpawned: 3
 --- !u!95 &1870362258
 Animator:
   serializedVersion: 3

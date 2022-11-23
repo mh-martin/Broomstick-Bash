@@ -80,7 +80,7 @@ public class GeneratorScript : MonoBehaviour
       {
         addRooms = false;
       }
-      //if the room ends to the left of the removeRoomX point then it needs to be removed
+      //if the room ends to the left of removeRoomX point then it needs to be removed
       if (roomEndX < removeRoomX)
       {
         roomsToRemove.Add(room);
@@ -109,19 +109,18 @@ public class GeneratorScript : MonoBehaviour
     {
       filteredObjects = filteredObjects.Where(go => !go.CompareTag(lastSpawnedTag)).ToList();
     }
-
     // generates random index to select a random object from array
     int randomIndex = Random.Range(0, filteredObjects.Count);
+    GameObject chosenObject = filteredObjects[randomIndex];
     // If the next object is an enemy, compares it to the previous object and rerolls if they're the same
-    GameObject prefabObject = filteredObjects[randomIndex];
-    if (objects.Count > 0 && prefabObject.CompareTag("Enemy") && prefabObject.name == objects.Last().name)
+    if (objects.Count > 0 && chosenObject.CompareTag("Enemy") && chosenObject.name == objects.Last().name)
     {
       filteredObjects.RemoveAt(randomIndex);
       randomIndex = Random.Range(0, filteredObjects.Count);
     }
     // creates instance of the randomly selected object
     GameObject obj = Instantiate(filteredObjects[randomIndex]);
-    obj.name = prefabObject.name;
+    obj.name = chosenObject.name;
     // sets the position
     float objectPositionX = lastObjectX + Random.Range(objectsMinDistance, objectsMaxDistance);
     float randomY = Random.Range(objectsMinY, objectsMaxY);
